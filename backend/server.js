@@ -1,25 +1,11 @@
-const express = require('express')
-const app = express()
+require("dotenv").config();
 
-const mongoose = require('mongoose');
+const connectDatabase = require('./db/Database.js')
+const app = require("./app.js")
+const PORT = process.env.PORT;
 
-const connectToDatabase = async () => {
-    try {
-      await mongoose.connect("mongodb://localhost:27017/follow-along", {
-        dbName: "follow-along"
-      });
-      console.log("Connected to follow-along database");
-    } catch (err) {
-      console.error("Error connecting to the database:", err);
-    }
-  };
-  app.get('/',(req,res)=>{
-    res.send('hello')
-  })
-  
-  // Call the function to connect to the database
-  connectToDatabase();
-
-app.listen(5000, ()=>{
-    console.log("Server is running on port 5000");
-})
+// Connecting to the database
+const server = app.listen(PORT,async()=>{
+  connectDatabase();
+  console.log(f`The server is running on Port:${PORT} URL: http://localhost:${PORT}`);
+});
