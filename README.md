@@ -107,5 +107,18 @@ In this milestone, we created the frontend UI for users to register by filling o
 
 ---
 
+## Milestone 6: Encrypting Passwords and Storing User Data Securely
+
+### Achievements:
+In this milestone, I completed the following tasks:
+- Implemented password encryption using `bcrypt` to hash user passwords during signup.
+- Stored the hashed password in the database instead of plain text.
+- Saved all user data (e.g., name, email, etc.) in the database while ensuring that the password remains encrypted.
+
+### Code Changes:
+- Updated the backend API to use `bcrypt` for password hashing.
+- Modified the database schema to store hashed passwords.
+- Implemented data validation and sanitization to ensure secure data storage.
+
 
 
