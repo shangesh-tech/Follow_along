@@ -60,3 +60,52 @@ In this milestone, we focused on setting up the back-end of the application. Key
    - Implemented basic **error handling** to ensure the application responds appropriately to failed requests and server errors.
 
 ---
+
+# Milestone 4: Creating User Model and Controller
+
+In this milestone, we accomplished the following tasks:
+
+## User Model
+- Created a **User Model** using MongoDB Schemas to define the structure of user data.
+- Designed a blueprint for storing user information, including:
+  - `name`
+  - `email`
+  - `password`
+
+## User Controller
+- Created a **User Controller** to handle user-related data, such as:
+  - Adding a new user.
+  - Retrieving user information.
+- Implemented the controller to manage user requests and responses effectively.
+
+## Multer Support
+- Enabled **file uploads** using **Multer**, allowing users to upload files like profile pictures.
+- Configured Multer to:
+  - Store user images in the backend.
+  - Keep track of the uploaded files.
+
+## README Update
+- Updated the **README** file in the root of the repository to summarize the progress made in this milestone.
+- Added a new section titled **"Milestone 4: Creating User Model and Controller"** to document the achievements.
+
+---
+
+## Milestone 5: Creating the Signup Page
+In this milestone, we created the frontend UI for users to register by filling out their details. We also ensured that user inputs (like email and password) are properly validated before they're submitted.
+
+### Key Achievements
+* Created a simple yet effective sign-up form that is clean and user-friendly.
+* Implemented form validation to ensure users input valid data.
+
+### Code Changes
+* Implemented HTML and CSS for the Sign-Up Page.
+* Added form validation to ensure users input valid data.
+
+### Future Work
+* Connect the frontend with the backend.
+* Implement user session management.
+
+---
+
+
+
