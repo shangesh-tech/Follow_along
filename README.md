@@ -118,7 +118,38 @@ In this milestone, I completed the following tasks:
 ### Code Changes:
 - Updated the backend API to use `bcrypt` for password hashing.
 - Modified the database schema to store hashed passwords.
-- Implemented data validation and sanitization to ensure secure data storage.
+- Implemented data validation and sanitization to ensure secure data storage
+
+---
+
+# Login Functionality Progress for Milestone 7
+
+In this milestone, we implemented a backend endpoint for user login, focusing on validating user credentials and verifying the encrypted password stored in the database.
+
+## Key Features
+
+* Validating user credentials during login
+* Comparing encrypted passwords using bcrypt
+* Protecting user data by storing hashed passwords
+
+## Technologies Used
+
+* Backend endpoint for user login
+* Bcrypt for password hashing
+* Database for storing user records
+
+---
+
+
+# Milestone 8: Frontend Card Component and Homepage Design
+
+## Learning Goals
+* Create a card component
+* Display cards on products page
+
+## Steps
+1. Create card component with props (name, image, price)
+2. Design homepage layout with grid or flexbox
 
 
 
