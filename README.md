@@ -164,4 +164,17 @@ In this milestone, we created a frontend form for taking product input details a
 
 ---
 
+# Milestone 10: Creating Product Schema and Endpoint
+## Overview
+
+This milestone covers creating a Mongoose schema for products and an endpoint to store product details in MongoDB.
+
+## Learning Objectives
+
+* Write a product schema with proper validation
+* Create a POST endpoint to receive and validate product data
+* Save product details to MongoDB
+
+---
+
 
