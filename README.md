@@ -3,8 +3,6 @@
 ## Project Description
 Ecommerce-Follow-Along is a comprehensive project designed to guide developers through the process of building an e-commerce application from scratch. This project will cover various aspects of web development, including front-end design, back-end integration, and database management, providing a hands-on learning experience.
 
-```markdown
-
 ## Project Milestone 1
 ### User Authentication:
 - Register and log in users.
