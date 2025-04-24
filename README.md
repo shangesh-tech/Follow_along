@@ -332,6 +332,106 @@ For **Login**:
 - Implemented the address page using React and Tailwind CSS.
 - Implemented the logic to fetch user addresses from the user schema.
 - Implemented the logic to add a new address in the user schema.
-```
 
-You can now copy and paste this markdown content into any markdown editor or file!
+## Milestone 22
+    1. Create route and display address:
+    Created a route (/add-address) for users to add a new address.
+    After filling in address details, users are redirected back to the profile page.
+    Display the added address on the profile page.
+    Added an option for users to delete addresses from their profile.
+## Milestone 23
+    1. Added a "Place Order" button in the cart to navigate to the "Select Address" page.
+    2. Created a "Select Address" page to display and select delivery addresses.
+    3. Built a backend endpoint to fetch user addresses.
+    4. Defined a Mongoose schema to store order details.
+    5. Implemented functionality to save orders with a "Pending" status.
+## Milestone 24
+    1. Displayed All Ordered Products:
+    Implemented functionality to display all the products that the user is ordering.
+    Ensured that each product is shown with its details in the order summary.
+    2. Displayed Selected Delivery Address:
+    Displayed the address that the user selected for delivery during checkout.
+    3. Displayed Total Value of the Cart:
+    Calculated and displayed the total price of products in the cart.
+    Updated the total dynamically based on the items in the cart.
+    4. Added Confirm Order Button:
+    Included a Confirm Order button at the bottom of the summary page.
+## Milestone 25
+     1. Create an Order Endpoint:
+     Design an endpoint to receive product, user, and address details.
+     Validate the request and ensure proper format for all input fields.
+     2. JWT Authentication:
+     Verify the user’s token using JWT to authenticate the request.
+     If the token is invalid or missing, return an appropriate error message.
+     3. Handle Multiple Products:
+     Ensure that each product in the order has unique details but share the same address.
+     4. Create Order Schema:
+     created Schema for Order
+     Include relevant information such as product details, user, and shipping address in the order schema.
+## Milestone 26
+    1. GET /user-orders-data
+    Fetches all orders associated with the authenticated user.
+    Middleware: verifyUser (JWT token verification).
+    Returns a list of orders if the user is authenticated and exists.
+    2. GetUserOrders
+    Fetches all orders associated with the authenticated user.
+    Verifies if the user exists and if the provided userId is valid.
+    If valid, fetches orders from the database and returns them to the client.
+
+## Milestone 27: My Orders Page
+Welcome to Milestone 27!
+
+In this milestone, we focused on creating the frontend page that displays all user orders.
+
+## Milestone 28: Cancel Order Feature
+In this milestone, we focused on adding a cancel order feature to the my-orders page and creating a backend endpoint for handling order cancellations.
+
+Welcome to Milestone 28!
+In this milestone, we focused on adding a cancel order feature to the my-orders page and creating a backend endpoint for handling order cancellations.
+
+## Milestone 29📝
+Created a PayPal Developer Account and logged into the PayPal Developer Dashboard.
+
+Located the Client ID in the sandbox accounts and saved it in the project.
+
+Updated the Order Confirmation Page to include two payment options:
+
+Cash on Delivery (COD)
+
+Online Payment
+
+Implemented radio buttons to toggle between COD and Online Payment.
+
+Set up logic so that PayPal buttons only appear when the Online Payment option is selected.
+
+## Milestone 30📝
+Implemented online payment using PayPal API using the client key you created earlier.
+
+Downloaded NPM package called react-paypal-js that will provide an component called PayPalScriptProvider which will display online payment methods like credit or debit card etc.
+
+## Milestone 31: Redux for Global State Management
+In this milestone, I implemented Redux for global state management. I set up a Redux store to manage application-wide states efficiently.
+
+Store Setup – Configured Redux store using @reduxjs/toolkit.
+
+Slices & Reducers – Created slices to manage state updates.
+
+Provider Integration – Wrapped the app with Provider to enable global access.
+
+Dispatch & Select – Used useDispatch and useSelector for state manipulation.
+
+This implementation improves state consistency and makes data flow more manageable across components.
+
+## Milestone 32 🎯
+Implemented Redux for global state management, enabling seamless state access across all pages.
+
+## Milestone 33📝
+Downloaded jsonwebtoken package using NPM
+Used sign method to create an JWT token with mail and ID
+Gave maxAge to set expire time
+Added the cookie inside the response that helps you to store the cookie inside browser.
+
+## Milestone 34📝
+Got the token from the browser cookie and send it to the server
+In backend wrote an middleware function to validate that JWT token
+In every page made sure that user cannot go to that page with out login
