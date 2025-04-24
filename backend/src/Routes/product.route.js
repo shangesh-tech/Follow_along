@@ -1,32 +1,35 @@
+// route
 const multer = require("multer");
 const upload = multer({ dest: "temp-uploads/" });
 const express = require("express");
-const router = express.Router();
-const verifyUser = require("../Middlewares/jwt-verify.js");
-
 const {
   createProductController,
   getProductDataController,
-  updateProductController,
+  updateProductDataController,
   getSingleProductDocumentController,
-  deleteSingleProductController,
+  deleteSingleProduct,
 } = require("../Controllers/product.controller.js");
-
-router.get("/get-products", getProductDataController);
-router.get("/get-single/:id", getSingleProductDocumentController);
+const { verifyUserController } = require("../Controllers/user.controller.js");
+const router = express.Router();
 
 router.post(
-  "/create-product",
-  [upload.array("files", 3), verifyUser],
+  "/createproduct",
+  upload.array("files", 5),
+  verifyUserController,
   createProductController
 );
 
+router.get("/getproducts", getProductDataController);
+
 router.put(
-  "/update-product/:id",
+  "/updateproducts/:id",
   upload.array("files", 5),
-  updateProductController
+  updateProductDataController
 );
 
-router.delete("/:id", deleteSingleProductController);
+router.get("/getproducts", getProductDataController);
+
+router.get("/getsingle/:id", getSingleProductDocumentController);
+router.delete("/:id", deleteSingleProduct);
 
 module.exports = router;

@@ -1,35 +1,30 @@
 const mongoose = require("mongoose");
-const UserModel = require("../Model/user.model");
-const CartModel = require("../Model/cart.model");
+const CartModel = require("../Model/cart.model.js");
+const UserModel = require("../Model/user.model.js");
 
-async function addToCartController(req, res) {
+async function AddToCartController() {
   const { productId, quantity } = req.body;
-  const userId = req.userId;
-
+  const userId = req.UserId;
   try {
-    if (!mongoose.Types.ObjectId.isValid(productId)) {
-      return res.status(400).send({ message: "Send valid product id" });
+    if (mongoose.Types.ObjectId.isValid(productId)) {
+      return res.status(400).send({ message: "Send Valid Product ID" });
     }
-    if (!mongoose.Types.ObjectId.isValid(userId)) {
-      return res
-        .status(400)
-        .send({ message: "Send valid user id", success: false });
+    if (!mongoose.Types.ObjectId.isValid(productId)) {
+      return res.status(400).send({ message: "Send Valid User ID" });
     }
 
     const checkUserPresent = await UserModel.findOne({ _id: userId });
     if (!checkUserPresent) {
-      return res
-        .status(400)
-        .send({ message: "unAuthorized get out !!", success: false });
+      return res.status(401).send({ message: "Un-Authorized Please signup " });
     }
 
-    const checkProductPresent = await CartModel.findOne({
+    const checkIfProductPresent = await CartModel.findOne({
       productId: productId,
     });
-    if (checkProductPresent) {
+    if (checkIfProductPresent) {
       return res
         .status(400)
-        .send({ message: "Already present in cart", success: false });
+        .send({ message: "Product already present in Cart" });
     }
 
     await CartModel.create({
@@ -40,37 +35,31 @@ async function addToCartController(req, res) {
 
     return res
       .status(201)
-      .send({ message: "Product created successfully", success: true });
-  } catch (error) {
-    console.log(error);
-    res
-      .status(500)
-      .send({ message: "internal server error", err: error.message });
+      .send({ message: "Product is successfully created", success: true });
+  } catch (er) {
+    return res.status(500).send({ message: er.message, success: false });
   }
 }
 
-async function getCartProductController(req, res) {
-  const userId = req.userId;
-
+async function GetProductsForUser(req, res) {
+  const userId = req.UserId;
   try {
     if (!mongoose.Types.ObjectId.isValid(userId)) {
-      return res.status(401).send({ message: "unAuthorized user " });
+      return res.status(401).send({ message: "Un-Authorized Please signup" });
     }
-
     const checkUserPresent = await UserModel.findOne({ _id: userId });
     if (!checkUserPresent) {
       return res.status(401).send({ message: "Un-Authorized Please signup" });
     }
-
     const data = await CartModel.find({ userId }).populate("productId");
+    // const data = await CartModel.find({ userId });
     return res.status(200).send({
-      message: "data successfully retrieved",
+      message: "Data successfully fetched",
       success: true,
       cartData: data,
     });
-  } catch (error) {
-    res.status(500).send({ message: error.message, success: false });
+  } catch (er) {
+    return res.status(500).send({ message: er.message, success: false });
   }
 }
-
-module.exports = { addToCartController, getCartProductController };
+module.exports = { AddToCartController, GetProductsForUser };

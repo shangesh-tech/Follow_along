@@ -1,10 +1,10 @@
-const nodemailer = require("nodemailer");
+const nodemailer = require('nodemailer');
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
+  host: 'smtp.gmail.com',
   auth: {
-    user: "Gautham@gmail.com",
-    pass: "qosr crfk zfos kufr",
+    user: 'jupitersorbeet@gmail.com',
+    pass: 'hptb ipob uxvk ttfq',
   },
 });
 

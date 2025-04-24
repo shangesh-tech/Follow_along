@@ -1,30 +1,30 @@
-import { Route, Routes } from "react-router-dom";
-import Navbar from "./Components/Navbar/Navbar.jsx";
-import CartPage from "./Pages/CartPage.jsx";
-import HomePage from "./Pages/HomePage.jsx";
-import Login from "./Pages/Login.jsx";
-import ProductEntryPage from "./Pages/ProductEntryPage.jsx";
-import ProfilePage from "./Pages/ProfilePage.jsx";
-import Signup from "./Pages/Signup.jsx";
-import SinglePageProduct from "./Pages/SingleProductPage.jsx";
-import UpdateForm from "./Pages/updateForm.jsx";
+import React from 'react'
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import {LoginPage,SignupPage,Home,CreateProduct, MyProducts, Cart, ProductDetails, Profile, CreateAddress, SelectAddress, OrderConfirmation, MyOrdersPage} from "./Routes";
+import "./App.css";
 
-function App() {
+const App = () => {
   return (
-    <>
-      <Navbar />
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/productentry" element={<ProductEntryPage />} />
-        <Route path="/update" element={<UpdateForm />} />
-        <Route path="/productdetails" element={<SinglePageProduct />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
+
+        <Route path='/' element={<Home/>}/>
+        <Route path='/login' element={<LoginPage/>}/>
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/create-product" element={<CreateProduct />} />
+        <Route path="/create-product/:id" element={<CreateProduct />} />
+        <Route path="/my-products" element={<MyProducts />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path='/create-address' element={<CreateAddress />} />
+        <Route path="/select-address" element={<SelectAddress />} />
+        <Route path="/order-confirmation" element={<OrderConfirmation />} />
+        <Route path="/myorders" element={<MyOrdersPage />} />
+
       </Routes>
-    </>
-  );
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
